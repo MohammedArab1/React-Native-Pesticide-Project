@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, SafeAreaView, Button } from 'react-native'
 import SecondCalc from './Components/SecondCalc'
 import DilutionComponent from './Components/DilutionComponent'
 import RatioComponent from './Components/RatioComponent'
+import VolumeComponent from './Components/VolumeComponent'
 
 export default function App() {
 
@@ -26,6 +27,7 @@ export default function App() {
       <Button title='Volume'
       onPress = {() => (setShowVolume(!showVolume))} 
       />
+      {showVolume && <VolumeComponent/>}
       <Button title='Dosage'
       onPress = {() => (setShowDosage(!showDosage))} 
       />

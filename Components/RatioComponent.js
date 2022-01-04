@@ -4,8 +4,6 @@ import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView } from "r
 
 
 
-
-
     const RatioComponent = () => {
 
 
@@ -17,11 +15,11 @@ import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView } from "r
 
         const calculate = (c1,v1,v2) => {
             setC2((c1 / v1) * v2);
-            const vol3 = (v2-c2);
-            setV3(vol3);
-
         }
 
+        useEffect(() => {
+            setV3(v2-c2);
+        }, [c2])
 
 
 
@@ -63,9 +61,8 @@ import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView } from "r
             onPress={() => {calculate(c1,v1,v2)}}
             />
 
-            <Text>You need to mix a total of {c2}mL of concentrate with {v3}mL of water to acquire a total spray mix volume {v2}mL</Text>
-
-
+            {c2 > 0 && <Text>You need to mix a total of {c2}mL of concentrate with {v3}mL of water to acquire a total spray mix volume {v2}mL</Text>}
+            
 
 
         </ScrollView>
