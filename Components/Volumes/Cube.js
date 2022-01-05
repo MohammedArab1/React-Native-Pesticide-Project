@@ -14,7 +14,7 @@ const Cube = () => {
 
     return (
         <ScrollView>
-            <Text>Please enter the length of the cube you are working with in meters</Text>
+            <Text>Please enter the length of the cube / cubic rectangle you are working with in meters</Text>
             <TextInput
             style={styles.input} 
             onChangeText={setLength}
@@ -23,7 +23,7 @@ const Cube = () => {
             />
 
 
-            <Text>Please enter the width of the cube you are working with in meters</Text>
+            <Text>Please enter the width of the cube / cubic rectangle you are working with in meters</Text>
             <TextInput
             style={styles.input} 
             onChangeText={setWidth}
@@ -31,7 +31,7 @@ const Cube = () => {
             keyboardType='numeric'
             />
 
-            <Text>Please enter the height of the cube you are working with in meters</Text>
+            <Text>Please enter the height of the cube / cubic rectangle you are working with in meters</Text>
             <TextInput
             style={styles.input} 
             onChangeText={setHeight}
@@ -41,10 +41,10 @@ const Cube = () => {
 
             <Button 
             title='Calculate Cube Volume'
-            onPress={() => {calculate(length,height,height)}}
+            onPress={() => {calculate(length,width,height)}}
             />
 
-            {volume > 0 && <Text>The total volume of your cube is: {volume} metres</Text>}
+            {volume > 0 && <Text>The total volume of your cube / cubic rectangle is: {volume} metres</Text>}
 
         </ScrollView>
     )

@@ -1,9 +1,12 @@
 import React, {useState} from 'react'
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View, SafeAreaView, Button, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, Button, ScrollView, SliderComponent } from 'react-native'
 import Square from './Volumes/Square'
 import Triangle from './Volumes/Triangle'
 import Cube from './Volumes/Cube'
+import Peak from './Volumes/Peak'
+import Silo from './Volumes/Silo'
+import Circle from './Volumes/Circle'
 
 
 const VolumeComponent = () => {
@@ -38,7 +41,7 @@ const VolumeComponent = () => {
             {showTriangle && <Triangle/>}
 
             <Button 
-                title='Cube Volume Calculation'
+                title='Cube / cubic rectangle Volume Calculation'
                 onPress = {() => (setShowCube(!showCube))} 
             />
 
@@ -49,15 +52,20 @@ const VolumeComponent = () => {
                 onPress = {() => (setShowPeak(!showPeak))} 
             />
 
+            {showPeak && <Peak/>}       
+
             <Button 
                 title='Circle Area Calculation'
                 onPress = {() => (setShowCircle(!showCircle))} 
             />
+            {showCircle && <Circle/>} 
 
             <Button 
                 title='Silo Volume Calculation'
                 onPress = {() => (setShowSilo(!showSilo))} 
             />
+
+            {showSilo && <Silo/>}
             
 
 

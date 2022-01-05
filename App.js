@@ -5,6 +5,8 @@ import SecondCalc from './Components/SecondCalc'
 import DilutionComponent from './Components/DilutionComponent'
 import RatioComponent from './Components/RatioComponent'
 import VolumeComponent from './Components/VolumeComponent'
+import DosageComponent from './Components/DosageComponent'
+import FlowrateComponent from './Components/FlowrateComponent'
 
 export default function App() {
 
@@ -12,6 +14,8 @@ export default function App() {
   const [showRatio, setShowRatio] = React.useState(false)
   const [showVolume, setShowVolume] = React.useState(false)
   const [showDosage, setShowDosage] = React.useState(false)
+  const [showFlowRate, setShowFlowRate] = React.useState(false)
+
 
 
   return (
@@ -31,6 +35,11 @@ export default function App() {
       <Button title='Dosage'
       onPress = {() => (setShowDosage(!showDosage))} 
       />
+      {showDosage && <DosageComponent/>}
+      <Button title='FlowRate'
+      onPress = {() => (setShowFlowRate(!showFlowRate))} 
+      />
+      {showFlowRate&& <FlowrateComponent/>}
     </SafeAreaView>
   );
 }
