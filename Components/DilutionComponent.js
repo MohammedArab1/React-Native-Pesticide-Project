@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView } from "react-native";
+import { View, SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView } from "react-native";
+import {styles} from "../Styles"
 
 
 
@@ -51,11 +52,13 @@ const DilutionComponent = () => {
 
     return (
         <ScrollView>
+            <SafeAreaView>
             <Text>
             A dilution is when you decrease the concentration of solute in solution.
             This can be applied in insecticide work to make large batches of spray mix from small very concentrated bottles of pesticide.
             In order to perform a dilution, exactly one missing value mus be present. Let us start
             </Text>
+            <View style={styles.space}></View>
             <Text> Please enter the percent concentration of the concentrate (if unknown , please put 0)</Text>
             <TextInput
             style={styles.input} 
@@ -93,25 +96,13 @@ const DilutionComponent = () => {
             onPress={() => calculate(c1,v1,c2,v2)}
             /> 
 
+            
             <Text>Result: {total}</Text>
-            
-
-            
-            
-
-
-
+            </SafeAreaView>
         </ScrollView>
     )
 }
 
-const styles = StyleSheet.create({
-    input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    },
-});
+
 
 export default DilutionComponent

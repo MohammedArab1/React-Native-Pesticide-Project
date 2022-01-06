@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView } from "react-native";
-
+import {styles} from "../Styles"
 const FlowrateComponent = () => {
 
 
@@ -51,13 +51,6 @@ const FlowrateComponent = () => {
     )
 }
 
-const styles = StyleSheet.create({
-    input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    },
-});
+
 
 export default FlowrateComponent

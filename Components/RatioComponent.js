@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView } from "react-native";
-
+import {styles} from "../Styles"
 
 
 
@@ -69,13 +69,6 @@ import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView } from "r
     )
 }
 
-const styles = StyleSheet.create({
-    input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    },
-});
+
 
 export default RatioComponent
