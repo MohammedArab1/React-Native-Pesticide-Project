@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView } from "react-native";
+import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView, View } from "react-native";
 import {styles} from "../Styles"
 const FlowrateComponent = () => {
 
@@ -16,13 +16,14 @@ const FlowrateComponent = () => {
     return (
 
 
-        <ScrollView>
+        <ScrollView style={styles.format}>
 
             <Text>
             This dosage calculation will help in determining how long it may take to spray the building you're working with.
             </Text>
 
-
+            <View style={styles.space}></View>
+            
             <Text>Please enter how much spray mix is needed to fog your entire building (can be found using the Dosage calculation)</Text>
             <TextInput
             style={styles.input} 

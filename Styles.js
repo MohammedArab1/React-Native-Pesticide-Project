@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import config from './config'
 
 const styles = StyleSheet.create({
     mainButton: {
@@ -48,6 +49,20 @@ const styles = StyleSheet.create({
     elevation: 3,
     backgroundColor: 'orange',
     },
+    image: {
+    width:'30%',
+    height:'30%',
+    marginLeft:'35%',
+    alignContent:'center',
+    resizeMode:'contain',
+    },
+    format: {
+    paddingLeft: config.deviceWidth * 0.1,
+    paddingTop: config.deviceWidth * 0.1,
+    paddingBottom: config.deviceWidth * 0.1,
+    paddingRight: config.deviceWidth * 0.1,
+    },
+    
 });
 
 export { styles }

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView } from "react-native";
+import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView, Image,View } from "react-native";
+import {styles} from '../../Styles'
 
 const Silo = () => {
     const calculate = (radius, height) => {
@@ -12,7 +13,7 @@ const Silo = () => {
 
 
     return (
-        <ScrollView>
+        <ScrollView style={styles.format}>
             <Text>Please enter the radius of the silo you are working with in meters </Text>
             <TextInput
             style={styles.input} 
@@ -40,13 +41,5 @@ const Silo = () => {
     )
 }
 
-const styles = StyleSheet.create({
-    input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    },
-});
 
 export default Silo

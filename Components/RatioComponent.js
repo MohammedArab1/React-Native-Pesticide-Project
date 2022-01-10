@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView } from "react-native";
+import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView, View } from "react-native";
 import {styles} from "../Styles"
 
 
@@ -26,11 +26,12 @@ import {styles} from "../Styles"
     return (
 
     
-        <ScrollView>
+        <ScrollView style={styles.format}>
             <Text>
             Ratios can be used in pesticide work when given instructions on how much pesticide to mix with water and you want to figure out how much concentrate to mix with water.
             let us start
             </Text>
+            <View style={styles.space}></View>
 
             <Text>Please enter how much pesticide you are told to mix with water (if given in parts, please give the number of parts)</Text>
             <TextInput
@@ -63,7 +64,6 @@ import {styles} from "../Styles"
 
             {c2 > 0 && <Text>You need to mix a total of {c2}mL of concentrate with {v3}mL of water to acquire a total spray mix volume {v2}mL</Text>}
             
-
 
         </ScrollView>
     )

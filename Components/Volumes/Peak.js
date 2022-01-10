@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView } from "react-native";
+import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView, Image,View } from "react-native";
+import {styles} from '../../Styles'
 
 const Peak = () => {
     const calculate = (length, width, heightTotal, heightNoPeak) => {
@@ -17,6 +18,7 @@ const Peak = () => {
 
     return (
         <ScrollView>
+            <View style={styles.format}>
             <Text>Please enter the length of the building with the peaked roof in meters </Text>
             <TextInput
             style={styles.input} 
@@ -65,18 +67,12 @@ const Peak = () => {
 
 
             {volume > 0 && <Text>The total volume of your Peaked building is: {volume} metres</Text>}
+            </View>
+
 
         </ScrollView>
     )
 }
 
-const styles = StyleSheet.create({
-    input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    },
-});
 
 export default Peak

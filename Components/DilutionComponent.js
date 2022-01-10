@@ -51,7 +51,7 @@ const DilutionComponent = () => {
 
 
     return (
-        <ScrollView>
+        <ScrollView style={styles.format}>
             <SafeAreaView>
             <Text>
             A dilution is when you decrease the concentration of solute in solution.
@@ -100,6 +100,7 @@ const DilutionComponent = () => {
             <Text>Result: {total}</Text>
             </SafeAreaView>
         </ScrollView>
+
     )
 }
 

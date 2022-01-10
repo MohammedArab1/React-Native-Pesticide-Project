@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView } from "react-native";
+import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView, Image,View } from "react-native";
+import {styles} from '../../Styles'
 
 const Triangle = () => {
 
@@ -13,6 +14,7 @@ const Triangle = () => {
 
     return (
         <ScrollView>
+            <View style={styles.format}>
             <Text>Please enter the length of the base of the triangle you are working with in meters</Text>
             <TextInput
             style={styles.input} 
@@ -35,18 +37,14 @@ const Triangle = () => {
             />
 
             {volume > 0 && <Text>The total area of the triangle is: {volume} metres</Text>}
+            </View>
+
+            <Image style={[styles.image, styles.format]} source={require('../images/Simple_triangle.svg.png')}/>
 
         </ScrollView>
     )
 }
 
-const styles = StyleSheet.create({
-    input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    },
-});
+
 
 export default Triangle

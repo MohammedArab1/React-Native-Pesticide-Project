@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView } from "react-native";
+import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView, View } from "react-native";
 import {styles} from "../Styles"
 const DosageComponent = () => {
 
@@ -17,13 +17,14 @@ const DosageComponent = () => {
     return (
 
 
-        <ScrollView>
+        <ScrollView style={styles.format}>
 
             <Text>
                 Dosage calculations can be useful in determining how much spray mix you need for given a volume. As well, 
                 it can help with determining how long your fogger machine may take
             </Text>
 
+            <View style={styles.space}></View>
 
             <Text>Please enter the volume of the building you're looking to spray (in m3)</Text>
             <TextInput
@@ -34,6 +35,7 @@ const DosageComponent = () => {
             />
 
             <Text>Please enter how much spray mix you need (in ml) to mix per unit of volume (in m3):</Text>
+            <View style={styles.space}></View>
 
             <Text>Spray mix needed(ml):</Text>
             <TextInput

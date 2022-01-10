@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView } from "react-native";
+import { SafeAreaView, StyleSheet, TextInput, Text, Button, ScrollView, Image,View } from "react-native";
+import {styles} from '../../Styles'
+
 
 
 const Square = () => {
@@ -13,7 +15,8 @@ const Square = () => {
     const [volume, setVolume] = React.useState(0);
 
     return (
-        <ScrollView>
+        <ScrollView> 
+            <View style={styles.format}>
             <Text>Please enter the length of the square / rectangle you are working with in meters</Text>
             <TextInput
             style={styles.input} 
@@ -36,18 +39,16 @@ const Square = () => {
             />
 
             {volume > 0 && <Text>The total area of the square is: {volume} metres</Text>}
+            
+            </View>
+
+
+            <Image style={[styles.image, styles.format]} source={require('../images/Square.png')}/>
 
         </ScrollView>
     )
 }
 
-const styles = StyleSheet.create({
-    input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    },
-});
+
 
 export default Square
