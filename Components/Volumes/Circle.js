@@ -17,7 +17,7 @@ const Circle = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setRadius}
-            value={radius}
+            value={radius.toString()}
             keyboardType='numeric'
             />
 
@@ -26,7 +26,11 @@ const Circle = () => {
             onPress={() => {calculate(radius)}}
             />
 
-            {volume > 0 && <Text>The total area of your circle is: {volume} metres</Text>}
+            <View style={[styles.space]}></View>
+            {volume > 0 && <Text style = {[styles.answer]}>The total area of your circle is: {volume} metres</Text>}
+
+            <View style={[styles.space]}></View>
+            <Image style={[styles.image]} source={require('../images/circle-with-titles.png')}/>
 
         </ScrollView>
     )

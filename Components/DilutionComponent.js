@@ -63,7 +63,7 @@ const DilutionComponent = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setC1}
-            value={c1}
+            value={c1.toString()}
             keyboardType='numeric'
             />
 
@@ -71,7 +71,7 @@ const DilutionComponent = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setV1}
-            value={v1}
+            value={v1.toString()}
             keyboardType='numeric'
             />
 
@@ -79,7 +79,7 @@ const DilutionComponent = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setC2}
-            value={c2}
+            value={c2.toString()}
             keyboardType='numeric'
             />
 
@@ -87,7 +87,7 @@ const DilutionComponent = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setV2}
-            value={v2}
+            value={v2.toString()}
             keyboardType='numeric'
             />
 
@@ -96,8 +96,8 @@ const DilutionComponent = () => {
             onPress={() => calculate(c1,v1,c2,v2)}
             /> 
 
-            
-            <Text>Result: {total}</Text>
+            <View style={[styles.space]}></View>
+            <Text style={[styles.answer]}>Result: {total}</Text>
             </SafeAreaView>
         </ScrollView>
 

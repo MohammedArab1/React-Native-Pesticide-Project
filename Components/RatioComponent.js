@@ -37,7 +37,7 @@ import {styles} from "../Styles"
             <TextInput
             style={styles.input} 
             onChangeText={setC1}
-            value={c1}
+            value={c1.toString()}
             keyboardType='numeric'
             />
 
@@ -45,7 +45,7 @@ import {styles} from "../Styles"
             <TextInput
             style={styles.input} 
             onChangeText={setV1}
-            value={v1}
+            value={v1.toString()}
             keyboardType='numeric'
             />
 
@@ -53,7 +53,7 @@ import {styles} from "../Styles"
             <TextInput
             style={styles.input} 
             onChangeText={setV2}
-            value={v2}
+            value={v2.toString()}
             keyboardType='numeric'
             />
 
@@ -62,7 +62,8 @@ import {styles} from "../Styles"
             onPress={() => {calculate(c1,v1,v2)}}
             />
 
-            {c2 > 0 && <Text>You need to mix a total of {c2}mL of concentrate with {v3}mL of water to acquire a total spray mix volume {v2}mL</Text>}
+            <View style={[styles.space]}></View>
+            {c2 > 0 && <Text style={[styles.answer]}>You need to mix a total of {c2}mL of concentrate with {v3}mL of water to acquire a total spray mix volume {v2}mL</Text>}
             
 
         </ScrollView>

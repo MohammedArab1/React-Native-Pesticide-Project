@@ -21,7 +21,7 @@ const Square = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setLength}
-            value={length}
+            value={length.toString()}
             keyboardType='numeric'
             />
 
@@ -29,7 +29,7 @@ const Square = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setWidth}
-            value={width}
+            value={width.toString()}
             keyboardType='numeric'
             />
 
@@ -38,12 +38,13 @@ const Square = () => {
             onPress={() => {calculate(length,width)}}
             />
 
-            {volume > 0 && <Text>The total area of the square is: {volume} metres</Text>}
+            <View style={[styles.space]}></View>
+            {volume > 0 && <Text style={[styles.answer]}>The total area of the square is: {volume} metres</Text>}
             
             </View>
 
 
-            <Image style={[styles.image, styles.format]} source={require('../images/Square.png')}/>
+            <Image style={[styles.image, styles.format]} source={require('../images/square-with-titles.png')}/>
 
         </ScrollView>
     )

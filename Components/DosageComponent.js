@@ -30,7 +30,7 @@ const DosageComponent = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setVolumeBuilding}
-            value={volumeBuilding}
+            value={volumeBuilding.toString()}
             keyboardType='numeric'
             />
 
@@ -41,7 +41,7 @@ const DosageComponent = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setSprayMix}
-            value={sprayMix}
+            value={sprayMix.toString()}
             keyboardType='numeric'
             />
 
@@ -49,7 +49,7 @@ const DosageComponent = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setVolumeNeeded}
-            value={volumeNeeded}
+            value={volumeNeeded.toString()}
             keyboardType='numeric'
             />
 
@@ -58,7 +58,8 @@ const DosageComponent = () => {
             onPress={() => {calculate(volumeBuilding,volumeNeeded,sprayMix)}}
             />
 
-            {sprayMixNeeded > 0 && <Text>You will need a total of {sprayMixNeeded}ml of spray mix to spray the entire building</Text>}
+            <View style={[styles.space]}></View>
+            {sprayMixNeeded > 0 && <Text style={[styles.answer]}>You will need a total of {sprayMixNeeded}ml of spray mix to spray the entire building</Text>}
 
             
         </ScrollView>

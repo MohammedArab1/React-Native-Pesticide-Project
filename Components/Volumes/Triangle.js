@@ -19,7 +19,7 @@ const Triangle = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setLength}
-            value={length}
+            value={length.toString()}
             keyboardType='numeric'
             />
 
@@ -27,7 +27,7 @@ const Triangle = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setHeight}
-            value={height}
+            value={height.toString()}
             keyboardType='numeric'
             />
 
@@ -36,10 +36,11 @@ const Triangle = () => {
             onPress={() => {calculate(length,height)}}
             />
 
-            {volume > 0 && <Text>The total area of the triangle is: {volume} metres</Text>}
+            <View style={[styles.space]}></View>
+            {volume > 0 && <Text style={[styles.answer]}>The total area of the triangle is: {volume} metres</Text>}
             </View>
 
-            <Image style={[styles.image, styles.format]} source={require('../images/Simple_triangle.svg.png')}/>
+            <Image style={[styles.image, styles.format]} source={require('../images/triangle-with-titles.png')}/>
 
         </ScrollView>
     )

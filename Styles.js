@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     },
     space: {
-        width: 20, // or whatever size you need
-        height: 20,
+    width: 20, // or whatever size you need
+    height: 20,
     },
     input: {
     height: 40,
@@ -48,13 +48,15 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     elevation: 3,
     backgroundColor: 'orange',
+    width:'70%',
     },
     image: {
-    width:'30%',
-    height:'30%',
-    marginLeft:'35%',
-    alignContent:'center',
+    width:'90%',
+    height:'70%',
     resizeMode:'contain',
+    marginLeft: 'auto',
+    marginRight: 'auto'
+
     },
     format: {
     paddingLeft: config.deviceWidth * 0.1,
@@ -62,6 +64,12 @@ const styles = StyleSheet.create({
     paddingBottom: config.deviceWidth * 0.1,
     paddingRight: config.deviceWidth * 0.1,
     },
+    answer: {
+        borderWidth: 1,
+        borderRadius: 5,
+        padding: 5
+    }
+
     
 });
 

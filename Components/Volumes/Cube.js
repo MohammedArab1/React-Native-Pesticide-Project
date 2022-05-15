@@ -21,7 +21,7 @@ const Cube = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setLength}
-            value={length}
+            value={length.toString()}
             keyboardType='numeric'
             />
 
@@ -30,7 +30,7 @@ const Cube = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setWidth}
-            value={width}
+            value={width.toString()}
             keyboardType='numeric'
             />
 
@@ -38,7 +38,7 @@ const Cube = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setHeight}
-            value={height}
+            value={height.toString()}
             keyboardType='numeric'
             />
 
@@ -47,10 +47,11 @@ const Cube = () => {
             onPress={() => {calculate(length,width,height)}}
             />
 
-            {volume > 0 && <Text>The total volume of your cube / cubic rectangle is: {volume} metres</Text>}
+            <View style={[styles.space]}></View>
+            {volume > 0 && <Text style={[styles.answer]}>The total volume of your cube / cubic rectangle is: {volume} metres</Text>}
             </View>
 
-            <Image style={[styles.image,styles.format]} source={require('../images/Cube.png')}/>
+            <Image style={[styles.image]} source={require('../images/Cube-with-titles.png')}/>
 
         </ScrollView>
     )

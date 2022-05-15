@@ -28,7 +28,7 @@ const FlowrateComponent = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setSprayMixNeeded}
-            value={sprayMixNeeded}
+            value={sprayMixNeeded.toString()}
             keyboardType='numeric'
             />
 
@@ -36,7 +36,7 @@ const FlowrateComponent = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setRateOfDispense}
-            value={rateOfDispense}
+            value={rateOfDispense.toString()}
             keyboardType='numeric'
             />
 
@@ -45,7 +45,8 @@ const FlowrateComponent = () => {
             onPress={() => {calculate(sprayMixNeeded,rateOfDispense)}}
             />
 
-            {timeRequired > 0 && <Text>It will take a total of {timeRequired} minutes to spray {sprayMixNeeded}ml at a rate of {rateOfDispense}mL per minute</Text>}
+            <View style={[styles.space]}></View>
+            {timeRequired > 0 && <Text style={[styles.answer]}>It will take a total of {timeRequired} minutes to spray {sprayMixNeeded}ml at a rate of {rateOfDispense}mL per minute</Text>}
 
             
         </ScrollView>

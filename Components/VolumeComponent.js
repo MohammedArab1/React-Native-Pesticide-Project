@@ -31,7 +31,7 @@ const VolumeComponent = ({navigation}) => {
     }
 
     return (
-        <ScrollView>
+        <SafeAreaView style={styles.container}>
             <Text style={styles.format}>
                 Volume can be used in pesticide work to find out how much necessary pesticide is required for a particular area. 
                 Let us start, Please choose the shape of the building you are trying to find the volume for.
@@ -73,7 +73,7 @@ const VolumeComponent = ({navigation}) => {
             <View style={styles.space}></View>
 
             <Button 
-                title='Building Peak Volume Calculation'
+                title='Building With Peak Volume Calculation'
                 onPress = {() => {navigation.navigate('Peak')  }}
                 style={styles.secondaryButton}
             />
@@ -106,7 +106,7 @@ const VolumeComponent = ({navigation}) => {
                 
 
 
-        </ScrollView>
+        </SafeAreaView>
     )
 }
 

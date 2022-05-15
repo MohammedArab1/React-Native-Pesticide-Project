@@ -18,7 +18,7 @@ const Silo = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setRadius}
-            value={radius}
+            value={radius.toString()}
             keyboardType='numeric'
             />
 
@@ -26,7 +26,7 @@ const Silo = () => {
             <TextInput
             style={styles.input} 
             onChangeText={setHeight}
-            value={height}
+            value={height.toString()}
             keyboardType='numeric'
             />
 
@@ -35,7 +35,11 @@ const Silo = () => {
             onPress={() => {calculate(radius,height)}}
             />
 
-            {volume > 0 && <Text>The total volume of your silo is: {volume} metres</Text>}
+            <View style={[styles.space]}></View>
+            {volume > 0 && <Text style={[styles.answer]}>The total volume of your silo is: {volume.toFixed(2)} metres</Text>}
+
+            <View style={[styles.space]}></View>
+            <Image style={[styles.image]} source={require('../images/silo-with-titles.png')}/>
 
         </ScrollView>
     )
