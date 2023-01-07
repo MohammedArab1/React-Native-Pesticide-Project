@@ -69,5 +69,4 @@ const MainComponent = ({ navigation }) => {
     );
 }
 
-//onPress = {() => { setShowDilutions(!showDilutions); hideButtons(0)  }} 
 export default MainComponent

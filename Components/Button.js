@@ -1,12 +1,13 @@
 import React from 'react'
-import {Text, Pressable } from "react-native";
-import {styles} from "../Styles"
+import {Text} from "react-native";
+import { Button as PaperButton } from "react-native-paper";
+
 
 const Button = (props) => {
     return (
-    <Pressable style={props.style} onPress={props.onPress}>
-        <Text style={styles.text}>{props.title}</Text>
-    </Pressable>
+    <PaperButton onPress={props.onPress} mode={"contained-tonal"}>
+        <Text>{props.title}</Text>
+    </PaperButton>
     )
 }
 

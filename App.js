@@ -1,87 +1,63 @@
-import React, {useState} from 'react'
-import { NavigationContainer } from '@react-navigation/native';
+import 'react-native-gesture-handler';
+import React from 'react'
+import { NavigationContainer, DefaultTheme  } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView} from 'react-native'
-import MainComponent from './Components/MainComponent'
-import DilutionComponent from './Components/DilutionComponent'
-import RatioComponent from './Components/RatioComponent'
-import VolumeComponent from './Components/VolumeComponent'
-import DosageComponent from './Components/DosageComponent'
-import FlowrateComponent from './Components/FlowrateComponent'
+import { Provider as PaperProvider, MD3LightTheme, adaptNavigationTheme, FAB } from 'react-native-paper';
+import { StatusBar} from 'react-native'
 import Circle from './Components/Volumes/Circle';
 import Cube from './Components/Volumes/Cube';
 import Peak from './Components/Volumes/Peak';
 import Silo from './Components/Volumes/Silo';
 import Square from './Components/Volumes/Square';
 import Triangle from './Components/Volumes/Triangle';
-import Button from './Components/Button'
-import {styles} from "./Styles"
-import { StackRouter } from 'react-navigation';
+import LeftDrawer from './Components/LeftDrawer';
+import {styles} from './Styles';
+
 
 
 
 const Stack = createNativeStackNavigator();
+const { LightTheme } = adaptNavigationTheme({ reactNavigationLight: DefaultTheme });
+
 
 export default function App() {
   return(
-    <NavigationContainer>
-      <Stack.Navigator>
+    <PaperProvider theme={MD3LightTheme}>
+    <NavigationContainer theme={LightTheme}>
+    <StatusBar barStyle="dark-content" backgroundColor="#ecf0f1" />
+      <Stack.Navigator screenOptions={{ headerStyle: { backgroundColor: 'papayawhip' }}}>
         <Stack.Screen
-          name = "MainComponent"
-          component = {MainComponent}
-          options = {{title:'Welcome'}}
+          name = "Drawer"
+          component = {LeftDrawer}
+          options={{ headerShown: false }}
           />
-          <Stack.Screen
-          name = "DilutionComponent"
-          component = {DilutionComponent}
-          options = {{title:'Dilution'}}
-          />
-          <Stack.Screen
-          name = "DosageComponent"
-          component = {DosageComponent}
-          options = {{title:'Dosage'}}
-          />
-          <Stack.Screen
-          name = "FlowrateComponent"
-          component = {FlowrateComponent}
-          options = {{title:'Flowrate'}}
-          />
-          <Stack.Screen
-          name = "RatioComponent"
-          component = {RatioComponent}
-          options = {{title:'Ratio'}}
-          />
-          <Stack.Screen
-          name = "VolumeComponent"
-          component = {VolumeComponent}
-          options = {{title:'Volume'}}
-          />
-          <Stack.Screen
+        <Stack.Screen
           name = "Triangle"
           component = {Triangle}
           />
-          <Stack.Screen
+        <Stack.Screen
           name = "Circle"
           component = {Circle}
           />
-          <Stack.Screen
+        <Stack.Screen
           name = "Cube"
           component = {Cube}
           />
-          <Stack.Screen
+        <Stack.Screen
           name = "Peak"
           component = {Peak}
           />
-          <Stack.Screen
+        <Stack.Screen
           name = "Silo"
           component = {Silo}
           />
-          <Stack.Screen
+        <Stack.Screen
           name = "Square"
           component = {Square}
           />
       </Stack.Navigator>
     </NavigationContainer>
+    </PaperProvider>
   )
 }
 

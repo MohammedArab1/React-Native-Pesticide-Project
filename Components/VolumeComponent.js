@@ -1,112 +1,88 @@
-import React, {useState} from 'react'
-import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View, SafeAreaView,ScrollView, SliderComponent, Image } from 'react-native'
-import Square from './Volumes/Square'
-import Triangle from './Volumes/Triangle'
-import Cube from './Volumes/Cube'
-import Peak from './Volumes/Peak'
-import Silo from './Volumes/Silo'
-import Circle from './Volumes/Circle'
+import React from 'react'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {View, SafeAreaView } from 'react-native'
+import {Text, Portal, FAB} from 'react-native-paper';
 import {styles} from "../Styles"
 import Button from './Button'
+import DialogComponent from './DialogComponent';
+
 
 const VolumeComponent = ({navigation}) => {
+    const [fabDialogVisible,  setFabDialogVisible] = React.useState(false)
 
-    const [showSquare, setShowSquare] = React.useState(false)
-    const [showTriangle, setShowTriangle] = React.useState(false)
-    const [showCube, setShowCube] = React.useState(false)
-    const [showPeak, setShowPeak] = React.useState(false)
-    const [showCircle, setShowCircle] = React.useState(false)
-    const [showSilo, setShowSilo] = React.useState(false)
-
-    const changeButtons = [setShowSquare, setShowTriangle, setShowCube, setShowPeak, setShowCircle, setShowSilo]
-
-    const hideButtons = (index) => {
-        for (let i = 0; i < changeButtons.length; i++){
-        if (i == index) {
-            continue;
-        }
-        changeButtons[i](false)
-        }
-    }
-
+    const showFabDialog = () => setFabDialogVisible(true);
+    const hideFabDialog = () => setFabDialogVisible(false);
+    
+    const fabHelp ="Volume can be used in pesticide work to find out how much necessary pesticide is required for a particular area. Please choose the shape of the building you are trying to find the volume for."
     return (
+        <Portal.Host>
         <SafeAreaView style={styles.container}>
-            <Text style={styles.format}>
-                Volume can be used in pesticide work to find out how much necessary pesticide is required for a particular area. 
-                Let us start, Please choose the shape of the building you are trying to find the volume for.
-            </Text>
 
-            <View style={styles.space}></View>
+                <Text variant="headlineSmall" style={styles.format}>
+                    Pick a shape for which you'd like to calculate the volume.
+                </Text>
 
-            <Button 
-                title='Square / rectangle Area Calculation'
-                onPress = {() => {  navigation.navigate('Square')  }}
-                style={styles.secondaryButton}
-            
-            />
+                <View style={styles.space}></View>
 
-
-            {showSquare && <Square/>}
-
-            <View style={styles.space}></View>
-
-            <Button 
-                title='Triangle Area Calculation'
-                onPress = {() => { navigation.navigate('Triangle')  }}
-                style={styles.secondaryButton}
-            />
-
-            {showTriangle && <Triangle/>}
-
-            <View style={styles.space}></View>
-
-
-            <Button 
-                title='Cube / cubic rectangle Volume Calculation'
-                onPress = {() => {navigation.navigate('Cube')  }}
-                style={styles.secondaryButton}
-            />
-
-            {showCube && <Cube/>}
-
-            <View style={styles.space}></View>
-
-            <Button 
-                title='Building With Peak Volume Calculation'
-                onPress = {() => {navigation.navigate('Peak')  }}
-                style={styles.secondaryButton}
-            />
-
-            {showPeak && <Peak/>}
-
-            <View style={styles.space}></View>       
-
-            <Button 
-                title='Circle Area Calculation'
-                onPress = {() => {navigation.navigate('Circle')   }}
-                style={styles.secondaryButton}
-            />
-            {showCircle && <Circle/>} 
-
-            <View style={styles.space}></View>
-
-            <Button 
-                title='Silo Volume Calculation'
-                onPress = {() => {navigation.navigate('Silo')  }}
-                style={styles.secondaryButton}
-            />
-
-            {showSilo && <Silo/>}
-
-            <View style={styles.space}></View>
-            
-
-
+                <Button 
+                    title='Square / rectangle Area Calculation'
+                    onPress = {() => {  navigation.navigate('Square')  }}
+                    style={styles.secondaryButton}
                 
+                />
+
+                <View style={styles.space}></View>
+
+                <Button 
+                    title='Triangle Area Calculation'
+                    onPress = {() => { navigation.navigate('Triangle')  }}
+                    style={styles.secondaryButton}
+                />
+                <View style={styles.space}></View>
+
+                <Button 
+                    title='Cube / cubic rectangle Volume Calculation'
+                    onPress = {() => {navigation.navigate('Cube')  }}
+                    style={styles.secondaryButton}
+                />
 
 
+                <View style={styles.space}></View>
+
+                <Button 
+                    title='Building With Peak Volume Calculation'
+                    onPress = {() => {navigation.navigate('Peak')  }}
+                    style={styles.secondaryButton}
+                />
+
+                <View style={styles.space}></View>       
+
+                <Button 
+                    title='Circle Area Calculation'
+                    onPress = {() => {navigation.navigate('Circle')   }}
+                    style={styles.secondaryButton}
+                />
+
+                <View style={styles.space}></View>
+
+                <Button 
+                    title='Silo Volume Calculation'
+                    onPress = {() => {navigation.navigate('Silo')  }}
+                    style={styles.secondaryButton}
+                />
+
+                <View style={styles.space}></View>
+
+            <Portal>
+                <DialogComponent title="Help" paragraph={fabHelp} visible={fabDialogVisible} hideDialog={hideFabDialog} />
+                <FAB
+                icon="help"
+                style={styles.fab}
+                onPress={() => showFabDialog()}
+                />
+            </Portal>
         </SafeAreaView>
+        </Portal.Host>
     )
 }
 
